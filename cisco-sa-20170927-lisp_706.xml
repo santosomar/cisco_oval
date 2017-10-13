@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oval_definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#ios ios-definitions-schema.xsd" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+  <generator>
+    <oval:product_name>PSIRT OVAL Definition Generator</oval:product_name>
+    <oval:product_version>0.1</oval:product_version>
+    <oval:schema_version>5.10</oval:schema_version>
+    <oval:timestamp>2017-09-27T09:53:42.9563015-05:00</oval:timestamp>
+  </generator>
+  <definitions>
+    <definition class="vulnerability" id="oval:cisco.oval:def:41679" version="1">
+      <metadata>
+        <title>cisco-sa-20170927-lisp</title>
+        <affected family="ios">
+          <platform>Cisco IOS</platform>
+        </affected>
+        <reference source="CVE" ref_id="CVE-2017-12236" ref_url="" />
+        <reference source="Vendor Advisory" ref_id="cisco-sa-20170927-lisp" ref_url="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-lisp" />
+        <description />
+      </metadata>
+      <criteria operator="AND">
+        <criterion test_ref="oval:cisco.oval:tst:41678" comment="config map-server" />
+        <criterion />
+      </criteria>
+    </definition>
+  </definitions>
+  <tests>
+    <line_test comment="config map-server" check="all" id="oval:cisco.oval:tst:41678" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+      <object object_ref="oval:cisco.oval:obj:1" />
+      <state state_ref="oval:cisco.oval:ste:59483" />
+    </line_test>
+  </tests>
+  <objects>
+    <line_object id="oval:cisco.oval:obj:1" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+      <show_subcommand>show running-config</show_subcommand>
+    </line_object>
+  </objects>
+  <states>
+    <line_state id="oval:cisco.oval:ste:59483" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+      <show_subcommand>show running-config</show_subcommand>
+      <config_line operation="pattern match">ipv[46] map-server</config_line>
+    </line_state>
+  </states>
+</oval_definitions>
