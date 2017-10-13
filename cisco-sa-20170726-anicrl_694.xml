@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<oval_definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#ios ios-definitions-schema.xsd" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+<oval_definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd http://oval.mitre.org/XMLSchema/oval-definitions-5#ios ios-definitions-schema.xsd">
   <generator>
     <oval:product_name>PSIRT OVAL Definition Generator</oval:product_name>
     <oval:product_version>0.1</oval:product_version>
@@ -13,46 +13,46 @@
         <affected family="ios">
           <platform>Cisco IOS</platform>
         </affected>
-        <reference source="CVE" ref_id="CVE-2017-6664" ref_url="" />
-        <reference source="Vendor Advisory" ref_id="cisco-sa-20170726-anicrl" ref_url="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl" />
-        <description />
+        <reference source="CVE" ref_id="CVE-2017-6664" ref_url=""/>
+        <reference source="Vendor Advisory" ref_id="cisco-sa-20170726-anicrl" ref_url="https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl"/>
+        <description/>
       </metadata>
       <criteria operator="AND">
-        <criterion test_ref="oval:cisco.oval:tst:41094" comment="config autonomic" />
-        <criterion test_ref="oval:cisco.oval:tst:41181" comment="IOS Versions for CSCvd22328" />
+        <criterion test_ref="oval:cisco.oval:tst:41094" comment="config autonomic"/>
+        <criterion test_ref="oval:cisco.oval:tst:41181" comment="IOS Versions for CSCvd22328"/>
       </criteria>
     </definition>
   </definitions>
   <tests>
-    <line_test id="oval:cisco.oval:tst:41094" version="1" check="all" comment="config autonomic" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
-      <object object_ref="oval:cisco.oval:obj:1" />
-      <state state_ref="oval:cisco.oval:ste:59159" />
+    <line_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:tst:41094" version="1" check="all" comment="config autonomic">
+      <object object_ref="oval:cisco.oval:obj:1"/>
+      <state state_ref="oval:cisco.oval:ste:59159"/>
     </line_test>
-    <version55_test id="oval:cisco.oval:tst:41181" version="1" check="at least one" state_operator="OR" comment="IOS Versions for CSCvd22328" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
-      <object object_ref="oval:org.mitre.oval:obj:6804" />
-      <state state_ref="oval:cisco.oval:ste:59171" />
-      <state state_ref="oval:cisco.oval:ste:59175" />
-      <state state_ref="oval:cisco.oval:ste:59188" />
+    <version55_test xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:tst:41181" version="1" check="at least one" state_operator="OR" comment="IOS Versions for CSCvd22328">
+      <object object_ref="oval:org.mitre.oval:obj:6804"/>
+      <state state_ref="oval:cisco.oval:ste:59171"/>
+      <state state_ref="oval:cisco.oval:ste:59175"/>
+      <state state_ref="oval:cisco.oval:ste:59188"/>
     </version55_test>
   </tests>
   <objects>
-    <line_object id="oval:cisco.oval:obj:1" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+    <line_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:obj:1" version="1">
       <show_subcommand>show running-config</show_subcommand>
     </line_object>
-    <version55_object id="oval:org.mitre.oval:obj:6804" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" />
+    <version55_object xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:org.mitre.oval:obj:6804" version="1"/>
   </objects>
   <states>
-    <line_state id="oval:cisco.oval:ste:59159" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+    <line_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:ste:59159" version="1">
       <show_subcommand>show running-config</show_subcommand>
       <config_line operation="pattern match">^autonomic</config_line>
     </line_state>
-    <version55_state id="oval:cisco.oval:ste:59171" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+    <version55_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:ste:59171" version="1">
       <version_string>15.6(1)S4</version_string>
     </version55_state>
-    <version55_state id="oval:cisco.oval:ste:59175" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+    <version55_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:ste:59175" version="1">
       <version_string>15.7(3)M</version_string>
     </version55_state>
-    <version55_state id="oval:cisco.oval:ste:59188" version="1" xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios">
+    <version55_state xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5#ios" id="oval:cisco.oval:ste:59188" version="1">
       <version_string>15.5(3)S6a</version_string>
     </version55_state>
   </states>
